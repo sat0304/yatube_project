@@ -17,4 +17,4 @@ pip install -r requirements.txt
 python manage.py runserver
 ```
 ### Авторы
-К.С Петров-Водкин
+К.С. Петров-Водкин
