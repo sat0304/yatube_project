@@ -1,8 +1,9 @@
 from django.http import HttpResponse
-# Create your views here.
-# Главная страница
-def index(request):    
+
+
+def index(request):
+    """Главная страница."""
     return HttpResponse('Главная страница')
 
-def group_posts(request, slug):    
-    return HttpResponse(f'Эта страница не работает {slug}')
+def group_posts(request, slug):
+    return HttpResponse(f'Здесь решается судьба мира {slug}')
