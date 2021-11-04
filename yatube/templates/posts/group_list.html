@@ -1,28 +1,27 @@
 {% extends 'base.html' %}
 {% block title %}
-  <h1>Последние обновления на сайте</h1>
+  <h1>Лев Толстой – зеркало русской революции.</h1>
+  <p>
+  Группа тайных поклонников графа.
+  </p>
 {% endblock %} 
 {% block content %}
   <!-- класс py-5 создает отступы сверху и снизу блока -->
-  <div class="container py-5">
+  <div class="container py-5">     
     <article>
       {% block post_L_Tolstoy_30071854 %}
       {% endblock %}
-      <a href="group_list.html">все записи группы</a>
     </article>
     <hr>
     <article>
       {% block post_L_Tolstoy_29071854 %}
       {% endblock %}
-      <a href="group_list.html">все записи группы</a>
     </article>
     <hr>
     <article>
       {% block post_L_Tolstoy_28071854 %}
       {% endblock %}
-      <a href="group_list.html">все записи группы</a>
     </article>
   <!-- под последним постом нет линии -->
   </div>  
 {% endblock %}
-    
