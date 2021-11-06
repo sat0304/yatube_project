@@ -13,26 +13,10 @@
   <!-- Подключен файл со стандартными стилями бустрап -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <title>Последние обновления на сайте</title>
-{% endblock %} 
-{% block content %}
-  <!-- класс py-5 создает отступы сверху и снизу блока -->
-  <div class="container py-5">
-    <h1>Последние обновления на сайте</h1>
-    <article>
-      {% include 'includes/post_L_Tolstoy_30071854' %}
-      <a href="group_list.html">все записи группы</a>
-    </article>
-    <hr>
-    <article>
-      {% include 'includes/post_L_Tolstoy_29071854' %}
-      <a href="group_list.html">все записи группы</a>
-    </article>
-    <hr>
-    <article>
-      {% include 'includes/post_L_Tolstoy_28071854' %}
-      <a href="group_list.html">все записи группы</a>
-    </article>
-  <!-- под последним постом нет линии -->
-  </div>  
 {% endblock %}
-    
+{% block content %}
+  <h1>Последние обновления на сайте</h1>
+{% endblock %}
+{% block link_to_recent %}
+  <a href="group_list.html">все записи группы</a>
+{% endblock %} 

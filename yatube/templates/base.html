@@ -1,16 +1,37 @@
 <!DOCTYPE html> <!-- Используется html 5 версии -->
 <html lang="ru"> <!-- Язык сайта - русский -->
-  <head>    
+  <head>
     {% block title %}
-    {% endblock %} 
+    {% endblock %}
   </head>
   <body>
     <header>
       {% include 'includes/header.html' %}
     </header>
     <main>
-      {% block content %}
-      {% endblock %} 
+      <!-- класс py-5 создает отступы сверху и снизу блока -->
+      <div class="container py-5">
+        {% block content %}
+        {% endblock %}
+        <article>
+          {% include 'includes/post_L_Tolstoy_30071854' %}
+          {% block link_to_recent %}
+          {% endblock %}
+        </article>
+        <hr>
+        <article>
+          {% include 'includes/post_L_Tolstoy_29071854' %}
+          {% block link_to_recent %}
+          {% endblock %}
+        </article>
+        <hr>
+        <article>
+          {% include 'includes/post_L_Tolstoy_28071854' %}
+          {% block link_to_recent %}
+          {% endblock %}
+        </article>
+        <!-- под последним постом нет линии -->
+      </div>
     </main>
     <!-- Использованы классы бустрапа: -->
     <!-- border-top: создаёт тонкую линию сверху блока -->
