@@ -1,16 +1,18 @@
-from django.http import HttpResponse
 from django.shortcuts import render
+from typing import Dict
+
+context = {
+           'title_index':'Это главная страница проекта Yatube',
+           'title_groups':'Здесь будет информация о группах проекта Yatube'
+          }
 
 
 def index(request):
     """Главная страница."""
     template = 'posts/index.html'
-    return render(request, template)
+    return render(request, template, context)
 
-def index(request):
-    """Страница Л.Н. Толстого."""
+def group_posts(request):
+    """Cтраница  публикаций."""
     template = 'posts/group_list.html'
-    return render(request, template)
-
-def group_posts(request, slug):
-    return HttpResponse('Здесь решается судьба мира', slug)
+    return render(request, template, context)
