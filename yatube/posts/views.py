@@ -1,3 +1,4 @@
+from django.contrib.auth import logout as core_logout
 from django.shortcuts import render
 from typing import Dict
 
