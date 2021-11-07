@@ -21,5 +21,5 @@ def group_posts(request):
 
 def icons(request):
     """Коллекция иконок."""
-    template = 'img/fav/fav.ico'
+    template = 'static/img/fav/<slug>'
     return render(request, template, context)
