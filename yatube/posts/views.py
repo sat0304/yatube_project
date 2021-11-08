@@ -18,8 +18,3 @@ def group_posts(request):
     """Cтраница  публикаций."""
     template = 'posts/group_list.html'
     return render(request, template, context)
-
-def icons(request):
-    """Коллекция иконок."""
-    template = 'static/img/fav/<slug>'
-    return render(request, template, context)
