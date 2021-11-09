@@ -1,8 +1,13 @@
-from django.contrib.auth import logout as core_logout
-from django.shortcuts import render
-from typing import Dict
+from django.shortcuts import render, get_object_or_404
+from .models import Post, Group
+
+    # Одна строка вместо тысячи слов на SQL:
+    # в переменную posts будет сохранена выборка из 10 объектов модели Post,
+    # отсортированных по полю pub_date по убыванию (от больших значений к меньшим)
+posts = Post.objects.filter(group=group).order_by('-pub_date')[:10]
 
 context = {
+           'posts': posts,
            'title_index':'Это главная страница проекта Yatube',
            'title_groups':'Здесь будет информация о группах проекта Yatube',
            'title_icon':'Здесь находяится коллекция иконок проекта Yatube'
@@ -10,11 +15,14 @@ context = {
 
 
 def index(request):
-    """Главная страница."""
-    template = 'posts/index.html'
-    return render(request, template, context)
+    return render(request, 'posts/index.html', context)
 
-def group_posts(request):
+def group_posts(request, slug):
     """Cтраница  публикаций."""
     template = 'posts/group_list.html'
-    return render(request, template, context)
+    group = get_object_or_404(Group, slug=slug)
+    context1 = {
+                'group': group
+               }
+    return render(request, template, context1)
+
