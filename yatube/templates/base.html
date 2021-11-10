@@ -2,11 +2,13 @@
 <html lang="ru"> <!-- Язык сайта - русский -->
   <head>
     {% block title %}
+    <p>text</p>
     {% endblock %}
   </head>
   <body>
     <header>
-      {% include 'includes/header.html' %}
+      {% block header_block %}
+      {% endblock %}
     </header>
     <main>
       <!-- класс py-5 создает отступы сверху и снизу блока -->
@@ -14,19 +16,22 @@
         {% block content %}
         {% endblock %}
         <article>
-          {% include 'posts/post_L_Tolstoy_30071854.html' %}
+          {% block post_L_Tolstoy_30071854 %}
+          {% endblock %}
           {% block link_to_recent1 %}
           {% endblock %}
         </article>
         <hr>
         <article>
-          {% include 'posts/post_L_Tolstoy_29071854.html' %}
+          {% block posts/post_L_Tolstoy_29071854 %}
+          {% endblock %}
           {% block link_to_recent2 %}
           {% endblock %}
         </article>
         <hr>
         <article>
-          {% include 'posts/post_L_Tolstoy_28071854.html' %}
+          {% block posts/post_L_Tolstoy_28071854 %}
+          {% endblock %}
           {% block link_to_recent3 %}
           {% endblock %}
         </article>
@@ -38,7 +43,8 @@
     <!-- text-center: выравнивает текстовые блоки внутри блока по центру -->
     <!-- py-3: контент внутри размещается с отступом сверху и снизу -->
     <footer class="border-top text-center py-3">
-      {% include 'includes/footer.html' %}
-    </footer>
+      {% block footer_block %}
+      {% endblock %}
+  </footer>
   </body>
 </html>
