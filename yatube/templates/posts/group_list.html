@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block title %}
   <title>Group list</title>
-{% endblock %}
+{% endblock title %}
 {% block content %}
   <h1>Лев Толстой – зеркало русской революции.</h1>
   <p>
@@ -22,10 +22,10 @@
   {% endif %}
   {% if not forloop.last %}<hr>{% endif %}
 {% endfor %} 
-{% endblock %}
+{% endblock content %}
 {% block link_to_recent1 %}
-{% endblock %}
+{% endblock link_to_recent1 %}
 {% block link_to_recent2 %}
-{% endblock %}
+{% endblock link_to_recent2 %}
 {% block link_to_recent3 %}
-{% endblock %}
+{% endblock link_to_recent3 %}
