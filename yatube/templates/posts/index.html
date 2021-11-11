@@ -1,16 +1,22 @@
 {% extends 'base.html' %}
 {% block title %}
-  <title>Last news</title>
+  <title>Последние обновления на сайте</title>
 {% endblock title%}
 {% block content %}
   <h1>Последние обновления на сайте</h1>
 {% endblock content %}
 {% block link_to_recent1 %}
-  <a href="{ group_posts:template }">все записи группы</a>
+{% if post.group %}
+  <a href="{% url 'posts:slug' post.group.slug %}">все записи группы</a>
+{% endif %}
 {% endblock link_to_recent1 %}
 {% block link_to_recent2 %}
-  <a href="posts/group_list.html">все записи группы</a>
+{% if post.group %}
+  <a href="{% url 'posts:slug' post.group.slug %}">все записи группы</a>
+{% endif %}
 {% endblock link_to_recent2 %}
 {% block link_to_recent3 %}
-  <a href="posts/group_list.html">все записи группы</a>
+{% if post.group %}
+  <a href="{% url 'posts:slug' post.group.slug %}">все записи группы</a>
+{% endif %}
 {% endblock link_to_recent3 %}
