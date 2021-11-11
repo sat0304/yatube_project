@@ -1,39 +1,33 @@
 <!DOCTYPE html> <!-- Используется html 5 версии -->
 <html lang="ru"> <!-- Язык сайта - русский -->
   <head>
+    {% include 'posts/head_block.html' %}
     {% block title %}
-    <p>text</p>
-    {% endblock %}
+    {% endblock title %}
   </head>
   <body>
     <header>
-      {% block header_block %}
-      {% endblock %}
+      {% include 'includes/header.html' %}
     </header>
     <main>
       <!-- класс py-5 создает отступы сверху и снизу блока -->
       <div class="container py-5">
         {% block content %}
-        {% endblock %}
+          <p>text2</p>
+        {% endblock content %}
         <article>
-          {% block post_L_Tolstoy_30071854 %}
-          {% endblock %}
-          {% block link_to_recent1 %}
-          {% endblock %}
+          {% include 'posts/post_L_Tolstoy_30071854.html' %}
+          {% block link_to_recent1 %}{% endblock %}
         </article>
         <hr>
         <article>
-          {% block posts/post_L_Tolstoy_29071854 %}
-          {% endblock %}
-          {% block link_to_recent2 %}
-          {% endblock %}
+          {% include 'posts/post_L_Tolstoy_29071854.html' %}
+          {% block link_to_recent2 %}{% endblock %}
         </article>
         <hr>
         <article>
-          {% block posts/post_L_Tolstoy_28071854 %}
-          {% endblock %}
-          {% block link_to_recent3 %}
-          {% endblock %}
+          {% include 'posts/post_L_Tolstoy_28071854.html' %}
+          {% block link_to_recent3 %}{% endblock %}
         </article>
         <!-- под последним постом нет линии -->
       </div>
@@ -43,8 +37,7 @@
     <!-- text-center: выравнивает текстовые блоки внутри блока по центру -->
     <!-- py-3: контент внутри размещается с отступом сверху и снизу -->
     <footer class="border-top text-center py-3">
-      {% block footer_block %}
-      {% endblock %}
-  </footer>
+      {% include 'includes/footer.html' %}
+    </footer>
   </body>
 </html>
