@@ -1,31 +1,24 @@
 <!DOCTYPE html> <!-- Используется html 5 версии -->
 <html lang="ru"> <!-- Язык сайта - русский -->
 {% extends 'base.html' %}
-{% load static %}
 {% block title %}
-  <meta charset="utf-8"> <!-- Кодировка сайта -->
-  <!-- Сайт готов работать с мобильными устройствами -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Загружаем фав-иконки -->
-  <link rel="icon" href= "{% static 'img/fav/favicon.ico' %}" type="image">
-  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/fav/apple-touch-icon.png' %}">
-  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/fav/favicon-32x32.png' %}">
-  <link rel="icon" type="image/png" sizes="16x16" href= "{% static 'img/fav/favicon-16x16.png' %}">
-  <meta name="msapplication-TileColor" content="#000">
-  <meta name="theme-color" content="#ffffff">
-  <!-- Подключен файл со стандартными стилями бустрап -->
-  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
   <title>{{ title_index }}</title>
-{% endblock %}
+{% endblock title%}
 {% block content %}
   <h1>Последние обновления на сайте</h1>
-{% endblock %}
+{% endblock content %}
 {% block link_to_recent1 %}
-  <a href="group_list.html">все записи группы</a>
-{% endblock %}
+{% if post.group %}
+  <a href="{% url 'posts:slug' post.group.slug %}">все записи группы</a>
+{% endif %}
+{% endblock link_to_recent1 %}
 {% block link_to_recent2 %}
-  <a href="group_list.html">все записи группы</a>
-{% endblock %}
+{% if post.group %}
+  <a href="{% url 'posts:slug' post.group.slug %}">все записи группы</a>
+{% endif %}
+{% endblock link_to_recent2 %}
 {% block link_to_recent3 %}
-  <a href="group_list.html">все записи группы</a>
-{% endblock %}
+{% if post.group %}
+  <a href="{% url 'posts:slug' post.group.slug %}">все записи группы</a>
+{% endif %}
+{% endblock link_to_recent3 %}

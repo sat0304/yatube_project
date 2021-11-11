@@ -1,8 +1,9 @@
 <!DOCTYPE html> <!-- Используется html 5 версии -->
 <html lang="ru"> <!-- Язык сайта - русский -->
   <head>
+    {% include 'posts/head_block.html' %}
     {% block title %}
-    {% endblock %}
+    {% endblock title %}
   </head>
   <body>
     <header>
@@ -12,23 +13,24 @@
       <!-- класс py-5 создает отступы сверху и снизу блока -->
       <div class="container py-5">
         {% block content %}
-        {% endblock %}
+          <p>text2</p>
+        {% endblock content %}
         <article>
           {% include 'posts/post_L_Tolstoy_30071854.html' %}
           {% block link_to_recent1 %}
-          {% endblock %}
+          {% endblock link_to_recent1 %}
         </article>
         <hr>
         <article>
           {% include 'posts/post_L_Tolstoy_29071854.html' %}
           {% block link_to_recent2 %}
-          {% endblock %}
+          {% endblock link_to_recent2 %}
         </article>
         <hr>
         <article>
           {% include 'posts/post_L_Tolstoy_28071854.html' %}
           {% block link_to_recent3 %}
-          {% endblock %}
+          {% endblock link_to_recent3 %}
         </article>
         <!-- под последним постом нет линии -->
       </div>
