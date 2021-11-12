@@ -13,7 +13,7 @@ def index(request):
     # В словаре context отправляем информацию в шаблон
     context = {
         'posts': posts,
-        'title_index':'Это главная страница проекта Yatube'
+        'title_index':'Последние обновления на сайте'
     }
     return render(request, template, context) 
 
@@ -27,9 +27,10 @@ def group_posts(request, slug):
     # Это аналог добавления
     # условия WHERE group_id = {group_id}
     posts = Post.objects.filter(group=group).order_by('-pub_date')[:10]
+    #posts = group.posts_all.all()[:10]
     context = {
         'group': group,
         'posts': posts,
-        'title_groups':'Записи сообщества Лев Толстой – зеркало русской революции.'
+        'title_groups':'Записи сообщества -'
     }
     return render(request, template, context)

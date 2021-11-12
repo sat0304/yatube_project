@@ -1,33 +1,19 @@
-<!DOCTYPE html> <!-- Используется html 5 версии -->
-<html lang="ru"> <!-- Язык сайта - русский -->
 {% extends 'base.html' %}
 {% block title %}
   <title>{{ title_groups }}</title>
 {% endblock title %}
 {% block content %}
-  <h1>Лев Толстой – зеркало русской революции.</h1>
-  <p>
-    Группа тайных поклонников графа.
-  </p>
-   {% for post in posts %}
-  <ul>
-    <li>
-      Автор: {{ post.author.get_full_name }}
-    </li>
-    <li>
-      Дата публикации: {{ post.pub_date|date:"d E Y" }}
-    </li>
-  </ul>
-  <p>{{ post.text }}</p> 
-  {% if post.group %}   
-  <a href="{% url 'post:slug' post.group.slug %}">все записи группы</a>
-  {% endif %}
-  {% if not forloop.last %}<hr>{% endif %}
-{% endfor %} 
+<h1>{{ title_groups }} {{ group.title }}</h1>
+ {% for post1 in posts %}
+<ul>
+  <li>
+    Автор: {{ post1.author.get_full_name }}
+  </li>
+  <li>
+    Дата публикации: {{ post1.pub_date|date:"d E Y" }}
+  </li>
+</ul>
+<p>{{ post1.text }}</p> 
+{% if not forloop.last %}<hr>{% endif %}
+{% endfor %}
 {% endblock content %}
-{% block link_to_recent1 %}
-{% endblock link_to_recent1 %}
-{% block link_to_recent2 %}
-{% endblock link_to_recent2 %}
-{% block link_to_recent3 %}
-{% endblock link_to_recent3 %}

@@ -1,24 +1,22 @@
-<!DOCTYPE html> <!-- Используется html 5 версии -->
-<html lang="ru"> <!-- Язык сайта - русский -->
 {% extends 'base.html' %}
 {% block title %}
   <title>{{ title_index }}</title>
-{% endblock title%}
+{% endblock title %}
 {% block content %}
-  <h1>Последние обновления на сайте</h1>
+<h1>{{ title_index }}</h1>
+ {% for post1 in posts %}
+<ul>
+  <li>
+    Автор: {{ post1.author.get_full_name }}
+  </li>
+  <li>
+    Дата публикации: {{ post1.pub_date|date:"d E Y" }}
+  </li>
+</ul>
+<p>{{ post1.text }}</p> 
+{% if post1.group %}   
+<a href="{% url 'posts:group_list' post1.group.slug %}">все записи группы</a>
+{% endif %}
+{% if not forloop.last %}<hr>{% endif %}
+{% endfor %}
 {% endblock content %}
-{% block link_to_recent1 %}
-{% if post.group %}
-  <a href="{% url 'posts:slug' post.group.slug %}">все записи группы</a>
-{% endif %}
-{% endblock link_to_recent1 %}
-{% block link_to_recent2 %}
-{% if post.group %}
-  <a href="{% url 'posts:slug' post.group.slug %}">все записи группы</a>
-{% endif %}
-{% endblock link_to_recent2 %}
-{% block link_to_recent3 %}
-{% if post.group %}
-  <a href="{% url 'posts:slug' post.group.slug %}">все записи группы</a>
-{% endif %}
-{% endblock link_to_recent3 %}
