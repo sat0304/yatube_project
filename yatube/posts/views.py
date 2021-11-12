@@ -30,6 +30,6 @@ def group_posts(request, slug):
     context = {
         'group': group,
         'posts': posts,
-        'title_groups':'Здесь будет информация о группах проекта Yatube'
+        'title_groups':'Записи сообщества Лев Толстой – зеркало русской революции.'
     }
     return render(request, template, context)
