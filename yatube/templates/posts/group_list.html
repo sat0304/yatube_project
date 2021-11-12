@@ -3,17 +3,17 @@
   <title>{{ title_groups }}</title>
 {% endblock title %}
 {% block content %}
-<h1>{{ title_groups }} {{ group.title }}</h1>
- {% for post1 in posts %}
-<ul>
-  <li>
-    Автор: {{ post1.author.get_full_name }}
-  </li>
-  <li>
-    Дата публикации: {{ post1.pub_date|date:"d E Y" }}
-  </li>
-</ul>
-<p>{{ post1.text }}</p> 
-{% if not forloop.last %}<hr>{% endif %}
-{% endfor %}
+  <h1>{{ title_groups }} {{ group.title }}</h1>
+   {% for post1 in posts %}
+    <ul>
+      <li>
+        Автор: {{ post1.author.get_full_name }}
+      </li>
+      <li>
+        Дата публикации: {{ post1.pub_date|date:"d E Y" }}
+      </li>
+    </ul>
+    <p>{{ post1.text }}</p> 
+    {% if not forloop.last %}<hr>{% endif %}
+  {% endfor %}
 {% endblock content %}
