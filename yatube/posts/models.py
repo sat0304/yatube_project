@@ -5,6 +5,7 @@ User = get_user_model()
 
 
 class Group(models.Model):
+    """Таблица, содержащая группы пользователей."""
     title = models.TextField()
     slug = models.SlugField(
                             unique=True, 
@@ -18,6 +19,7 @@ class Group(models.Model):
 
 
 class Post(models.Model):
+    """Таблица, содержащая сообщения (посты) пользователей."""
     text = models.TextField()
     pub_date = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(
